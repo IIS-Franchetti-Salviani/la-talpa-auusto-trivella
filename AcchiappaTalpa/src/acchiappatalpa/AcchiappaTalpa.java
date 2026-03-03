@@ -16,8 +16,8 @@ public class AcchiappaTalpa {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        JFrame frame = new JFrame();
-        frame.setSize(400, 300);
+        TalpaJFrame frame = new TalpaJFrame();
+        frame.setSize(700, 400);
         frame.setVisible(true);
         
     }
