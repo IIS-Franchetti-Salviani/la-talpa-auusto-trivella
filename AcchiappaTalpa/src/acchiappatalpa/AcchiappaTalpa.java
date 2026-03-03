@@ -17,8 +17,9 @@ public class AcchiappaTalpa {
      */
     public static void main(String[] args) {
         TalpaJFrame frame = new TalpaJFrame();
-        frame.setSize(700, 400);
+        frame.setSize(1000, 600);
         frame.setVisible(true);
+        
         
     }
     

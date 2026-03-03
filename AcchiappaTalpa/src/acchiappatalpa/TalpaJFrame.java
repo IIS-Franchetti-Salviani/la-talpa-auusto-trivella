@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package acchiappatalpa;
 
 /**
@@ -12,11 +8,23 @@ public class TalpaJFrame extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TalpaJFrame.class.getName());
 
+    // 1. DICHIARA LA VARIABILE QUI
+    private Gestore gestore;
+
     /**
      * Creates new form TalpaJFrame
      */
     public TalpaJFrame() {
         initComponents();
+        
+        // Creiamo l'array con i nomi delle tue JLabel
+        javax.swing.JLabel[] arrayBuche = {
+            buca1, buca2, buca3, buca4, buca5, buca6, buca7, buca8
+        };
+
+        // 2. INIZIALIZZA CON LA MINUSCOLA
+        gestore = new Gestore(arrayBuche);
+        gestore.start(); 
     }
 
     /**
@@ -28,121 +36,112 @@ public class TalpaJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buca1 = new javax.swing.JButton();
-        buca2 = new javax.swing.JButton();
-        buca3 = new javax.swing.JButton();
-        buca4 = new javax.swing.JButton();
-        buca5 = new javax.swing.JButton();
-        buca6 = new javax.swing.JButton();
-        buca8 = new javax.swing.JButton();
-        buca7 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        buca5 = new javax.swing.JLabel();
+        buca6 = new javax.swing.JLabel();
+        buca1 = new javax.swing.JLabel();
+        buca8 = new javax.swing.JLabel();
+        buca2 = new javax.swing.JLabel();
+        buca3 = new javax.swing.JLabel();
+        buca4 = new javax.swing.JLabel();
+        buca7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        buca1.setBackground(new java.awt.Color(0, 204, 51));
-        buca1.setForeground(new java.awt.Color(0, 255, 51));
-        buca1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buca1ActionPerformed(evt);
-            }
-        });
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/acchiappatalpa/talpaFinale.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
 
-        buca2.setBackground(new java.awt.Color(0, 204, 51));
-        buca2.setActionCommand("");
-        buca2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buca2ActionPerformed(evt);
-            }
-        });
+        buca5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        buca5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/acchiappatalpa/bucaFinale.png"))); // NOI18N
+        buca5.setText("jLabel3");
 
-        buca3.setBackground(new java.awt.Color(0, 204, 51));
+        buca6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        buca6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/acchiappatalpa/bucaFinale.png"))); // NOI18N
+        buca6.setText("jLabel3");
 
-        buca4.setBackground(new java.awt.Color(0, 204, 51));
+        buca1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        buca1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/acchiappatalpa/bucaFinale.png"))); // NOI18N
+        buca1.setText("jLabel3");
 
-        buca5.setBackground(new java.awt.Color(0, 204, 51));
-        buca5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buca5ActionPerformed(evt);
-            }
-        });
+        buca8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        buca8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/acchiappatalpa/bucaFinale.png"))); // NOI18N
+        buca8.setText("jLabel3");
 
-        buca6.setBackground(new java.awt.Color(0, 204, 51));
-        buca6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buca6ActionPerformed(evt);
-            }
-        });
+        buca2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        buca2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/acchiappatalpa/bucaFinale.png"))); // NOI18N
+        buca2.setText("jLabel3");
 
-        buca8.setBackground(new java.awt.Color(0, 204, 51));
+        buca3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        buca3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/acchiappatalpa/bucaFinale.png"))); // NOI18N
+        buca3.setText("jLabel3");
 
-        buca7.setBackground(new java.awt.Color(0, 204, 51));
+        buca4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        buca4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/acchiappatalpa/bucaFinale.png"))); // NOI18N
+        buca4.setText("jLabel3");
+
+        buca7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        buca7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/acchiappatalpa/bucaFinale.png"))); // NOI18N
+        buca7.setText("jLabel3");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(43, Short.MAX_VALUE)
+                .addComponent(buca1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(137, 137, 137)
+                .addComponent(buca2, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(102, 102, 102)
+                .addComponent(buca3, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(232, 232, 232))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(302, 302, 302))
             .addGroup(layout.createSequentialGroup()
-                .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addComponent(buca4)
-                        .addGap(104, 104, 104)
-                        .addComponent(buca5))
+                        .addGap(180, 180, 180)
+                        .addComponent(buca4, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(119, 119, 119)
+                        .addComponent(buca5, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(buca1)
-                                .addGap(87, 87, 87)
-                                .addComponent(buca2))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(buca6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(buca7)))
-                        .addGap(108, 108, 108)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(buca3)
-                            .addComponent(buca8))))
-                .addContainerGap(207, Short.MAX_VALUE))
+                        .addGap(16, 16, 16)
+                        .addComponent(buca6, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(152, 152, 152)
+                        .addComponent(buca7, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(105, 105, 105)
+                        .addComponent(buca8, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(121, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buca1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buca2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buca3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(buca4, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buca5, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(170, 170, 170)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buca1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buca2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buca3, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buca6, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buca8, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buca7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(89, 89, 89))
+                    .addComponent(buca4, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buca5, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buca6, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buca7, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buca8, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void buca1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buca1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buca1ActionPerformed
-
-    private void buca2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buca2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buca2ActionPerformed
-
-    private void buca5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buca5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buca5ActionPerformed
-
-    private void buca6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buca6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buca6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,18 +164,21 @@ public class TalpaJFrame extends javax.swing.JFrame {
         }
         //</editor-fold>
 
+        
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new TalpaJFrame().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buca1;
-    private javax.swing.JButton buca2;
-    private javax.swing.JButton buca3;
-    private javax.swing.JButton buca4;
-    private javax.swing.JButton buca5;
-    private javax.swing.JButton buca6;
-    private javax.swing.JButton buca7;
-    private javax.swing.JButton buca8;
+    private javax.swing.JLabel buca1;
+    private javax.swing.JLabel buca2;
+    private javax.swing.JLabel buca3;
+    private javax.swing.JLabel buca4;
+    private javax.swing.JLabel buca5;
+    private javax.swing.JLabel buca6;
+    private javax.swing.JLabel buca7;
+    private javax.swing.JLabel buca8;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
