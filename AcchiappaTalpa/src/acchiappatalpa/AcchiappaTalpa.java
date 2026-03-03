@@ -4,6 +4,8 @@
  */
 package acchiappatalpa;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author trivella.augusto
@@ -14,7 +16,10 @@ public class AcchiappaTalpa {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        JFrame frame = new JFrame();
+        frame.setSize(400, 300);
+        frame.setVisible(true);
+        
     }
     
 }
