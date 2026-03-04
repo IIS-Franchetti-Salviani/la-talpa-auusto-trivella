@@ -64,6 +64,17 @@ public class Gestore extends Thread {
         posizioneTalpa = nuovaPosizione;
     }
     
+    public boolean controllaColpo(JLabel bucaCliccata) {
+        // Verifichiamo se la buca passata è quella in posizioneTalpa
+        if (posizioneTalpa != -1 && bucaCliccata == buche[posizioneTalpa]) {
+            // Hai preso la talpa! Ripristiniamo subito la buca vuota
+            buche[posizioneTalpa].setIcon(iconaBucaVuota);
+            posizioneTalpa = -1; // Reset posizione per evitare doppi punti
+            return true;
+        }
+        return false;
+    }
+    
     public void fermaGioco() {
         inEsecuzione = false;
         this.interrupt();

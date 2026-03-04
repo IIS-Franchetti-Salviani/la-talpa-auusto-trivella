@@ -1,5 +1,7 @@
 package acchiappatalpa;
 
+import javax.swing.JLabel;
+
 /**
  *
  * @author trivella.augusto
@@ -22,10 +24,31 @@ public class TalpaJFrame extends javax.swing.JFrame {
             buca1, buca2, buca3, buca4, buca5, buca6, buca7, buca8
         };
 
-        // 2. INIZIALIZZA CON LA MINUSCOLA
+        // Inizializziamo il gestore
         gestore = new Gestore(arrayBuche);
         gestore.start(); 
-    }
+        
+        // Ciclo per aggiungere il click a ogni buca
+        for (int i = 0; i < arrayBuche.length; i++) {
+            // Usiamo una variabile 'final' per poterla usare dentro il MouseAdapter
+            final javax.swing.JLabel bucaCorrente = arrayBuche[i];
+            
+            bucaCorrente.addMouseListener(new java.awt.event.MouseAdapter() {
+                @Override
+                public void mouseClicked(java.awt.event.MouseEvent evt) {
+                    // Chiediamo al gestore se abbiamo colpito la talpa
+                    if (gestore.controllaColpo(bucaCorrente)) {
+                        System.out.println("PRESA! +1 Punto");
+                    } else {
+                        System.out.println("Mancata! Era un buco vuoto.");
+                    }
+                }
+            });
+            
+            // Opzionale: puliamo il testo "jLabel3" che si vede nel form
+            bucaCorrente.setText("");
+        }
+    } // Chiude il costruttore correttamente
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,7 +59,6 @@ public class TalpaJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         buca5 = new javax.swing.JLabel();
         buca6 = new javax.swing.JLabel();
         buca1 = new javax.swing.JLabel();
@@ -47,9 +69,6 @@ public class TalpaJFrame extends javax.swing.JFrame {
         buca7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/acchiappatalpa/talpaFinale.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
 
         buca5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         buca5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/acchiappatalpa/bucaFinale.png"))); // NOI18N
@@ -87,18 +106,6 @@ public class TalpaJFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(43, Short.MAX_VALUE)
-                .addComponent(buca1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(137, 137, 137)
-                .addComponent(buca2, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(102, 102, 102)
-                .addComponent(buca3, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(232, 232, 232))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(302, 302, 302))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -114,20 +121,23 @@ public class TalpaJFrame extends javax.swing.JFrame {
                         .addGap(105, 105, 105)
                         .addComponent(buca8, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(43, Short.MAX_VALUE)
+                .addComponent(buca1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(137, 137, 137)
+                .addComponent(buca2, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(102, 102, 102)
+                .addComponent(buca3, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(232, 232, 232))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(170, 170, 170)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(buca1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buca2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buca3, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(170, 170, 170)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buca1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buca2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buca3, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buca4, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -179,6 +189,5 @@ public class TalpaJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel buca6;
     private javax.swing.JLabel buca7;
     private javax.swing.JLabel buca8;
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
